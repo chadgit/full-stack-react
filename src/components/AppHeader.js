@@ -20,7 +20,7 @@ const AppHeader = ({ classes }) => (
   <AppBar position="static">
     <Toolbar>
       <Typography variant="title" color="inherit">
-        My React App
+      <i class="material-icons"></i>
       </Typography>
       <Button color="inherit" component={Link} to="/">Home</Button>
       <Button color="inherit" component={Link} to="/posts">Posts Manager</Button>
