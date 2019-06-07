@@ -18,7 +18,12 @@ import { find, orderBy } from 'lodash';
 import { compose } from 'recompose';
 
 import PostEditor from '../components/PostEditor';
+import 'highlight.js/styles/github.css';
 
+const md = require('markdown-it')()
+  .use(require('markdown-it-highlightjs'), {auto:true,code:true})
+
+// import hljs from 'highlight.js/lib/highlight';
 const styles = theme => ({
   posts: {
     marginTop: 2 * theme.spacing.unit,
@@ -106,9 +111,13 @@ class PostsManager extends Component {
               {orderBy(this.state.posts, ['updatedAt', 'title'], ['desc', 'asc']).map(post => (
                 <ListItem key={post.id} button component={Link} to={`/posts/${post.id}`}>
                   <ListItemText
-                    primary={post.title}
-                    secondary={post.updatedAt && `Updated ${moment(post.updatedAt).fromNow()}`}
+                    primary={<div dangerouslySetInnerHTML={{__html: md.render(post.title)}} />}
+
+                    secondary={<div dangerouslySetInnerHTML={{__html: md.render(post.body)}} />}
                   />
+                  {/* <ListItemText
+                    primary={post.updatedAt && `Updated ${moment(post.updatedAt).fromNow()}`}
+                    />*/}
                   <ListItemSecondaryAction>
                     <IconButton onClick={() => this.deletePost(post)} color="inherit">
                       <DeleteIcon />
