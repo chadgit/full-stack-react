@@ -23,7 +23,7 @@ const AppHeader = ({ classes }) => (
       <i class="material-icons"></i>
       </Typography>
       <Button color="inherit" component={Link} to="/">Home</Button>
-      <Button color="inherit" component={Link} to="/posts">Posts Manager</Button>
+      <Button color="inherit" component={Link} to="/posts">Questions</Button>
       <div className={classes.flex} />
       <LoginButton />
     </Toolbar>

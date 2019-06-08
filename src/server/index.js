@@ -43,6 +43,7 @@ epilogue.initialize({ app, sequelize: database });
 epilogue.resource({
   model: Post,
   endpoints: ['/posts', '/posts/:id'],
+  pagination: false
 });
 
 const port = process.env.SERVER_PORT || 3001;
