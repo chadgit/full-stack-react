@@ -16,7 +16,7 @@
     "lodash": "^4.17.10",
     "markdown-it": "^8.4.2",
     "markdown-it-highlightjs": "^3.0.0",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-final-form": "^3.6.4",
